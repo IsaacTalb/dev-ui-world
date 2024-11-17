@@ -1,0 +1,18 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Deploy Project
+        run: npm run build
+      - name: Deploy to VPS
+        run: rsync -avz ./* root@38.0.101.76:/var/www/html
