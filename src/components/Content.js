@@ -1,13 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const Content = () => {
-  return (
-    <main className="flex-1 p-6 bg-white">
-      <h2 className="text-lg font-semibold mb-4">Main Content</h2>
-      <p>This is where your main content will go.</p>
-    </main>
-  );
+const Content = ({ children }) => {
+  return <div className="content-container">{children}</div>;
 };
 
 export default Content;

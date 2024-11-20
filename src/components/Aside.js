@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const Aside = () => {
   return (
     <aside className="bg-gray-100 p-4 w-1/4">

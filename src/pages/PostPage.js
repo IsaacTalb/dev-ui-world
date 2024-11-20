@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from '../utils/api';
+import api from '../utils/api';
 
 const PostPage = () => {
   const [content, setContent] = useState('');
@@ -11,7 +11,7 @@ const PostPage = () => {
       return;
     }
     try {
-      await axios.post(
+      await api.post(
         '/post',
         { content },
         { headers: { Authorization: `Bearer $ {token}` } }

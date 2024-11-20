@@ -3,8 +3,8 @@ import React from 'react';
 const PublicPage = () => {
   return (
     <div>
-      <h2>Welcome to the Developer UI world</h2>
-      <p>Anyone can view this content without logging in.</p>
+      <h1>Welcome to the Landing Page</h1>
+      <p>Explore our features and learn more about us!</p>
     </div>
   );
 };

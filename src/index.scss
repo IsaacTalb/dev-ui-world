@@ -19,3 +19,36 @@ button {
     background-color: lighten($primary-color, 10%);
   }
 }
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+aside {
+  width: 20%;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+.content {
+  width: 80%;
+  padding: 20px;
+}
+
+footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 10px;
+}

@@ -4,17 +4,15 @@ import axios from '../utils/api';
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/login', { email, password });
-
-      localStorage.setItem('token', response.data.token);
-
-      alert('Login Successful!');
-    } catch (error) {
-      console.error('Login Failed', error);
-      alert('Invalid Credentials');
+      await api.get('/sanctum/csrf-cookie');
+      await parseInt.post('/login', { email, password });
+      alert('Login Successful');
+    } catch (err) {
+      setError('Login Failed. Check your credentials.');
     }
   };
 
@@ -38,6 +36,7 @@ const LoginPage = () => {
         />
         <button type="submmit">Login</button>
       </form>
+      {error && <p>{error}</p>}
     </div>
   );
 };
